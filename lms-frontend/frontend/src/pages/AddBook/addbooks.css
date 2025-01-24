@@ -1,0 +1,51 @@
+/* bookform.css */
+.book-form-container {
+    background-color: #212529; 
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 20px; 
+    color : white
+}
+
+.bookform {
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.form-title {
+    color: #343a40; 
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 1.5rem; 
+}
+
+.form-control,
+.form-control-file {
+    border: 1px solid #ced4da; 
+    border-radius: 4px;
+    padding: 0.75rem;
+}
+.form-control:focus,
+.form-control-file:focus{
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.form-check-label {
+    font-weight: 500;
+}
+
+.submit-button {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}

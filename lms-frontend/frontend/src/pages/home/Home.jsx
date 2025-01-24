@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ("./home.css");
 const Home = () => {
     return (
@@ -6,8 +7,11 @@ const Home = () => {
             <div className="row">
                 <div className="theHomeText d-flex col-lg-6 justify-content-center align-items-lg-center flex-column" 
                 style={{height:"91.5vh"}}>
-                    <h2 className="d-flex justify-content-center" style={{fontSize:"70px"}}>Utsav Book Store</h2>
-                    <button className='viewbook btn btn-lg btn-primary text-white '>View Book</button>
+                    <center>
+                    <h3 className="d-flex justify-content-center" style={{fontSize:"70px"}}>Utsav Lankapati's</h3>
+                    <h2 className="d-flex justify-content-center" style={{fontSize:"50px"}}>Book Store</h2>
+                    </center>
+                    <Link className='viewbook btn btn-lg btn-primary text-white my-3'to="/Books">View Book</Link>
                 </div>
                 <div className="d-flex col-lg-6 justify-content-center align-items-center flex-column"
                 style={{height:"91.5vh"}}>
