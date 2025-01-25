@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../footer/Footer';
 import ("./home.css");
 const Home = () => {
     return (
@@ -18,7 +19,7 @@ const Home = () => {
                     <img className='homeimg' src="/medias/homepage/book-svgrepo-com.svg" alt="book_image" style={{width:"500px"}}/>
                 </div>
             </div>
-
+            <Footer />
         </div>
     )
 }
