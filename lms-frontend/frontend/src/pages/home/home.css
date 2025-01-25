@@ -9,3 +9,39 @@ body{
 .theHomeText{
     height: 91.5vh;
 }
+.viewbookbtn {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px 19px;
+    transition: all 0.3s ease; 
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.viewbookbtn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+@media (max-width: 768px) { 
+    .viewbookbtn {
+        padding: 8px 15px; 
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .viewbookbtn {
+        padding: 6px 12px;
+        font-size: 0.8rem; 
+    }
+}
+
+@media (min-width: 1200px){
+    .viewbookbtn{
+        padding: 12px 22px; 
+        font-size: 1.1rem; 
+    }
+}
