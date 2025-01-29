@@ -6,6 +6,7 @@ const bookschema = new mogoose.Schema({
     author:{ type: String , require:true},
     image:{ type: String , require:true},
     price:{ type: Number , require:true},
+    hashtags:{type:String,reuired:true}
 });
 
 module.exports = new mogoose.model("books",bookschema);

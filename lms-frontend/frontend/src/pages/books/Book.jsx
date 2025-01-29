@@ -1,5 +1,6 @@
 import React, { useState,useEffect} from 'react';
 import axios from 'axios';
+import BookCard from '../../Components/bookcards/BookCard';
 
 
 const Book = () => {
@@ -29,16 +30,16 @@ const Book = () => {
         return <div>Error : {error.message}</div>
     }
     return (
-        <div className="text-white">
-            <h3>Books</h3>
-            <ul>
+        <div className='bookpgmain'>
+            <div className='d-flex align-items-start flex-wrap gap-3 text-center'>
                 {books.map((book)=>(
-                    <li key={book._id}>
-                        <h2>{book.bookname}</h2>
-                        <p>Author: {book.author}</p>
-                    </li>
+                    <BookCard className="row" book={book}/>
+                    // <li key={book._id}>
+                    //     <h2>{book.bookname}</h2>
+                    //     <p>Author: {book.author}</p>
+                    // </li>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };

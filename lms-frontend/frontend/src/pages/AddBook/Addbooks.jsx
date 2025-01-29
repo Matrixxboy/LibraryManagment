@@ -25,6 +25,10 @@ const addBook = () => {
                     <textarea className="form-control" id="bookdesc" placeholder="Enter a brief description of the book" rows="3" required /> {/* Added rows for better textarea height */}
                 </div>
                 <div className="form-group">
+                    <label htmlFor="booktag">Book tag</label>
+                    <input type="text" className="form-control" id="booktag" placeholder="Enter one tag for the book" rows="3" required /> {/* Added rows for better textarea height */}
+                </div>
+                <div className="form-group">
                     <label htmlFor="bookimage" style={{margin:"2px 1px 2px 1px"}}>Upload Book Cover</label>
                     <br />
                     <input type="file" className="form-control-file" id="bookimage" required />

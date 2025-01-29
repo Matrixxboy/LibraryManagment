@@ -11,7 +11,7 @@ const Home = () => {
                     <center>
                         <h3 className="d-flex justify-content-center" style={{fontSize:"70px"}}>Utsav Lankapati's</h3>
                         <h2 className="d-flex justify-content-center" style={{fontSize:"50px"}}>Book Store</h2>
-                        <Link className='viewbookbtn my-3'to="/Books">View Book</Link>
+                        <Link className='viewbookbtn my-3'to="/Book">View Book</Link>
                     </center>
                 </div>
                 <div className="d-flex col-lg-6 justify-content-center align-items-center flex-column"
