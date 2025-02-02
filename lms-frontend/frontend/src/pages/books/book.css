@@ -1,0 +1,72 @@
+
+.body{
+    max-width: auto;
+    max-height: auto;
+}
+
+@media (min-width: 768px) { /* Example breakpoint */
+    .body {
+        max-width: 1200px; /* Larger max-width on larger screens */
+    }
+}
+
+
+/* BookCard.css */
+
+.book-card {
+    width: 18rem; /* Consistent width for all cards */
+    border: 1px solid #ddd; /* Optional: Add a border */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    transition: transform 0.2s; /* Optional: Add a hover effect */
+}
+
+.book-card:hover {
+    transform: scale(1.05); /* Optional: Scale up slightly on hover */
+}
+
+.book-card img {
+    width: 100%;
+    height: 250px; /* Consistent height for all images */
+    object-fit: cover;
+}
+
+.book-card .card-body {
+    padding: 1rem; /* Adjust padding as needed */
+}
+
+.book-card .card-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.book-card .card-text {
+    font-size: 0.9rem;
+    color: #666; /* Slightly lighter text color */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Book.css or your global CSS */
+.bookpgmain {
+    /* No need for vh-100 unless absolutely necessary */
+    padding: 20px; /* Add some padding around the content */
+}
+
+.bookcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between cards */
+    justify-content: center; /* Center the cards horizontally */
+}
+
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+    .book-card {
+      width: 16rem; /* Slightly smaller cards on smaller screens */
+    }
+}

@@ -71,5 +71,3 @@ router.delete("/deleteBook/:id",async(req,res)=>{
 })
 
 module.exports = router;
-
-// just want to see ssh is working 
