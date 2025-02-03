@@ -61,7 +61,7 @@ const AddBook = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="bookdesc">Book Description</label>
-                    <textarea name="description" value={bookData.description} l aclassName="form-control" id="bookdesc"
+                    <textarea name="description" value={bookData.description} className="form-control" id="bookdesc"
                               placeholder="Enter a brief description of the book" rows="3" required
                               onChange={change}/> {/* Added rows for better textarea height */}
                 </div>
@@ -80,7 +80,7 @@ const AddBook = () => {
                 <div className="form-group">
                     <label htmlFor="bookimage" style={{margin: "2px 1px 2px 1px"}}>Upload Book Cover</label>
                     <br/>
-                    <input name="file" type="file" value={bookData.file} className="form-control-file" id="bookimage"
+                    <input name="file" type="file" className="form-control-file" id="bookimage"
                            onChange={change}/>
                 </div>
                 <div className="form-group form-check">
