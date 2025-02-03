@@ -71,6 +71,8 @@ const Book = () => {
                         <BookCard key={book._id} book={book} />
                     ))}
                 </div>
+                <br/>
+                <br/>
                 <Footer />
             </div>
     );

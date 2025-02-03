@@ -25,6 +25,7 @@ const BookCard = ({ book }) => {
                 <ul className="list-group ">
                     <li className="bookdetails list-group-item">Author : {book.author}</li>
                     <li className="bookdetails list-group-item">Book Price : {book.price}/-</li>
+                    <li className="bookdetails list-group-item">Tags : {book.hashtags}</li>
                     {/* <li className="list-group-item">{book.hashtags}</li> */}
                 </ul>
                 <div className="card-body">
