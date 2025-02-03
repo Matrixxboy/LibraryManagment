@@ -1,20 +1,53 @@
 import React, { useState } from 'react';
-import './addbooks.css'; // Import your CSS file
+import './addbooks.css';
+import axios from "axios"; // Import your CSS file
 
-const addBook = () => {
-    const [Data, setData] = useState([
+const AddBook = () => {
+    const [bookData, setBookData] = useState({
         bookname:"",
         author:"",
         description:"",
         hashtags:"",
-        image=""
-    ]);
+        image:null,
+        price:"",
+});
     const change = (e) => {
-        const [name,value] = e.target;
+        const {name,type,value,files} = e.target;
+        setBookData(prevData => ({
+            ...prevData,
+            [name]: type === 'file' ? files[0] : value, // Handle file inputs differently
+        }));
+    }
+    const saveNewBook = async (e) => {
+        e.preventDefault();
+        try {
+            const formData = new FormData();
+            for(const key in bookData) {
+                formData.append(key, bookData[key]);
+            }
+            const response = await axios.post("http://localhost:5000/api/v1/books", formData,{
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+            });
+            console.log("Book data successfully : ",response.data);
+            alert(response.data.message);
+            setBookData({
+                bookname:"",
+                author:"",
+                description:"",
+                hashtags:"",
+                image:null,
+                price:"",
+            });
+        }catch (e) {
+            console.error("Error creating book", e);
+            alert('Error creating book');
+        }
     }
     return (
         <div className="book-form-container"> {/* Outer container for styling */}
-            <form className="bookform container">
+            <form className="bookform container" onSubmit={saveNewBook}>
                 <h2 className="form-title text-center mb-4">Add New Book</h2> {/* Form title */}
                 <div className="row">
                     <div className="col-md-6">
@@ -39,7 +72,7 @@ const addBook = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="booktag">Book tag</label>
-                    <input name="hashtags" type="text" className="form-control" id="booktag" placeholder="Enter one tag for the book" rows="3" required 
+                    <input name="hashtags" type="text" className="form-control" id="booktag" placeholder="Enter one tag for the book" required
                     onChange={change}/> {/* Added rows for better textarea height */}
                 </div>
                 <div className="form-group">
@@ -65,4 +98,4 @@ const addBook = () => {
     );
 };
 
-export default addBook;
+export default AddBook;

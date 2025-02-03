@@ -21,7 +21,7 @@ router.get("/getBooks",async(req,res)=>{
         books = await bookModel.find();
         res.status(200).json({books})
     } catch (error) {
-        console.log("error : Books not get")
+        console.log("error : Books not get",error)
     }
 })
 
