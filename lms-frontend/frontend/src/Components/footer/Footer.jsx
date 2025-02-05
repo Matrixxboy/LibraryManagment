@@ -14,7 +14,7 @@ const Footer = () => {
                                 <h5 className="title text-white">
                                     <FontAwesomeIcon icon={faGithub} className="me-1" /> GitHub</h5>
                                 <p className="text text-white">i am Open Source Contributor.Focused on JavaScript , AI , ML and Data Science.</p>
-                                <Link className="footerbtn">Visit my Github</Link>
+                                <Link className="footerbtn" to="https://github.com/matrixxboy" target="_blank"  >Visit my Github</Link>
                             </div>
                     </div>
                     <div className="col-12 col-md-4 mb-3"> 

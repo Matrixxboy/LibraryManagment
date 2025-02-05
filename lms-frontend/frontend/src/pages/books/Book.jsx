@@ -73,7 +73,6 @@ const Book = () => {
                 </div>
                 <br/>
                 <br/>
-                <Footer />
             </div>
     );
 };

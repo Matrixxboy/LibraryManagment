@@ -22,6 +22,9 @@ const Navbar = () => {
                             <Link className="nav-item nav-link text-white" to="/Addbooks">
                                 ADD BOOKS
                             </Link>
+                            <Link className="nav-item nav-link text-white" to="/Signup">
+                                Login
+                            </Link>
                         </ul>
                     </div>
                 </div>

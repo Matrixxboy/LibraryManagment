@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './addbooks.css';
-import axios from "axios"; // Import your CSS file
+    import axios from "axios"; // Import your CSS file
 
 const AddBook = () => {
     const [bookData, setBookData] = useState({
@@ -69,7 +69,7 @@ const AddBook = () => {
                     <label htmlFor="booktag">Book tag</label>
                     <input name="hashtags" value={bookData.hashtags} type="text" className="form-control" id="booktag"
                            placeholder="Enter one tag for the book" required
-                           onChange={change}/> {/* Added rows for better textarea height */}
+                           onChange={change}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="authorname">Price</label>
