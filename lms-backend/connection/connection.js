@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const userName = 'matrixboy' //user name of the Database user
+const userName = '/' //user name of the Database user
 const dbPassword = '/' //password of Database user
 const connectionString = `mongodb+srv://${userName}:${dbPassword}@librarymanagment.yrw7k.mongodb.net/`
 
