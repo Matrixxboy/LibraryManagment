@@ -15,5 +15,3 @@ mongoose.connect(connectionString).then(()=>{
 }).catch(()=>{
     console.log("Something is wrong connecting database...");
 })
-
-//checking update
