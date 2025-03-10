@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faGithub, faTwitter, faInstagram, faFacebook, faGlobe } from "@fortawesome/free-brands-svg-icons";
 // import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const UserProfile = () => {
     const [user, setUser] = useState({

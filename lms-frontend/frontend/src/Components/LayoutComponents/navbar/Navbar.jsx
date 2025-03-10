@@ -6,7 +6,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="navbar navbar-expand-lg bg-dark">
+        <nav className="navbar navbar-expand-lg bg-dark hidden">
             <div className="container-fluid">
                 <Link className="navbar-brand text-white" to="/">Book Store</Link>
                 <button
