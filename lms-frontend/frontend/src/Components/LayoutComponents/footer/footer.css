@@ -1,13 +1,18 @@
-.footerbtn{
-    color:white;
-    text-decoration: none;
-    border: 1px solid white;
-    padding: 10px;
+footer {
+    background: #222;
+    color: white;
 }
 
-.footerbtn:hover{
-    background-color: white;
-    color:black;
-    text-decoration: none;
-    border: 1px solid black;
+.btn-outline-light {
+    border-color: white;
+    color: white;
+}
+
+.btn-outline-light:hover {
+    background: white;
+    color: #222;
+}
+
+.border-top {
+    border-color: rgba(255, 255, 255, 0.2) !important;
 }
