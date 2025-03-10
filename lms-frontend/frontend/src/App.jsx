@@ -6,6 +6,9 @@ import Book from './pages/books/Book';
 import Addbooks from './pages/AddBook/Addbooks'
 import Signup from "./pages/loginPage/Signup";
 import Footer from "./Components/footer/Footer";
+import Loginpage from "./pages/loginPage/Loginpage";
+import UserProfile from "./pages/UserProfile/UserProfile";
+
 function App() {
   return (
     <Router>
@@ -15,6 +18,9 @@ function App() {
           <Route path='/Book' element={<Book />} />
           <Route path='/AddBooks' element={<Addbooks />} />
           <Route path='/Signup' element={<Signup />} />
+          <Route path="/Login" element={<Loginpage />} />
+          <Route path="/Profile" element={<UserProfile />} />
+
       </Routes>
         <Footer />
     </Router>

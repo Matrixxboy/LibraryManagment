@@ -1,7 +1,7 @@
 require("dotenv").config()
 const mongoose = require("mongoose");
-const userName = process.env.MONGODB_USERNAME;
-const dbPassword = process.env.MONGODB_PASSWORD;
+const userName = process.env.MONGOOSE_USERNAME;
+const dbPassword = process.env.MDB_PASSWORD;
 const connectionString = `mongodb+srv://${userName}:${dbPassword}@librarymanagment.yrw7k.mongodb.net/`
 
 if(!userName || !dbPassword){

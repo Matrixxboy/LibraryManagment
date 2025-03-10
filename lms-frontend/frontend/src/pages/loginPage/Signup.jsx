@@ -85,7 +85,7 @@ const Signup = () => {
                         <div className="line"></div>
                     </div>
                     <br/>
-                    <p>Alrady have account ? <Link to="/Loginpage">Click here</Link> to redirect login page</p>
+                    <p>Alrady have account ? <Link to="/Login">Click here</Link> to redirect login page</p>
                     <button className="btn btn-lg btn-normal ">Sign Up</button>
                     <br />
                 </form>

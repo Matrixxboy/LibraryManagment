@@ -14,13 +14,16 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <Link className="nav-item nav-link active text-white" to="/">
-                                HOME
+                                Home
+                            </Link>
+                            <Link className="nav-item nav-link active text-white" to="/Profile">
+                                Profile
                             </Link>
                             <Link className="nav-item nav-link text-white" to="/Book">
-                                BOOKS
+                                Books
                             </Link>
                             <Link className="nav-item nav-link text-white" to="/Addbooks">
-                                ADD BOOKS
+                                Add Book
                             </Link>
                             <Link className="nav-item nav-link text-white" to="/Signup">
                                 Login
