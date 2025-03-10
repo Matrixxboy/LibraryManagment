@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import BookCard from '../../Components/bookcards/BookCard';
-import Footer from '../../Components/footer/Footer';
+import BookCard from '../../Components/CoreComponents/Bookcards/BookCard';
+import Footer from '../../Components/LayoutComponents/footer/Footer';
 import "./book.css"
 
 const Book = () => {

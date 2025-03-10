@@ -1,0 +1,129 @@
+/* bookcard.css */
+.bookcardcomp {
+    padding-top: 50px; /* Adjust this value to control the gap size */
+}
+/* Glass effect styles */
+.glass-effect {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect (may not be supported in all browsers) */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.glass-effect:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly darker background on hover */
+    border-color: rgba(255, 255, 255, 0.5); /* More prominent border on hover */
+}
+
+.glass-effect::before { /* Pseudo-element for the blur */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit; /* Inherit background color from parent */
+    backdrop-filter: blur(10px); /* Apply the blur */
+    z-index: -1; /* Place the pseudo-element behind the card content */
+}
+
+.glass-button {
+    background-color: rgba(255, 255, 255, 0); /* Semi-transparent white background */
+    backdrop-filter: blur(5px); /* Subtle blur */
+    border: none; /* Remove default button border */
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    margin: 0.5rem; /* Add some margin around buttons */
+    border-radius: 5px; /* Rounded corners */
+    color: #333; /* Darker text color for contrast */
+    text-decoration: none; /* Remove underlines from links */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    display: inline-block; /* Make buttons behave like inline elements */
+    cursor: pointer; /* Make cursor a pointer on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.glass-button:hover {
+    background-color: rgba(255, 255, 255, 3); /* Slightly darker on hover */
+    transform: translateY(-2x); /* Move up slightly on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+
+.glass-button:active {
+    transform: translateY(0); /* Return to original position on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Back to original shadow */
+}
+
+/* Card styles */
+.card {
+    width: 20rem; /* Fixed card width */
+    transition: transform 0.3s ease, width 0.43 ease, height 0.3s ease; /* Smooth transitions for expansion */
+    overflow: hidden; /* Prevents content from overflowing during expansion */
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slight scale on hover */
+}
+
+/* Image styles */
+.card img {
+    width: 100%; /* Image takes full card width */
+    height: 200px; /* Initial image height */
+    object-fit: cover; /* Image covers container, may be cropped */
+    border-radius: 5px; /* Rounded corners for the image */
+    transition: height 0.3s ease; /* Smooth image height transition */
+    /* Removed padding-top: 10px; - Likely unnecessary and can cause issues */
+}
+
+/* Expanded card styles */
+.expanded {
+    width: 25rem; /* Increased width on expansion */
+    z-index: 1; /* Ensure expanded card is on top */
+}
+
+.expanded img {
+    height: 300px; /* Increased image height on expansion */
+}
+
+/* Expanded content styles */
+.expanded-content {
+    padding: 1rem;
+    color: rgb(0, 0, 0); /* Black text color */
+    border-top: 1px solid rgba(255, 255, 255, 0.5); /* Top border for expanded content */
+    white-space: pre-wrap; /* Allows text wrapping and preserves whitespace */
+}
+
+/* Book card title and description styles */
+.bookcard {
+    text-align: center; /* Center text within the card */
+}
+
+.bookdetails{
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect (may not be supported in all browsers) */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card .card-title {
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflow */
+    white-space: nowrap; /* Prevent text from wrapping */
+    /* Removed conflicting styles */
+}
+
+.card .card-text {
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflow */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Small image style (for specific images) */
+.small-image {
+    height: 150px; /* Reduced height for small images */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+.button-body{
+    justify-content: center;
+}

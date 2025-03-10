@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router,Routes,Route} from "react-router-dom";
-import Navbar from './Components/navbar/Navbar';
+import Navbar from './Components/LayoutComponents/navbar/Navbar';
 import Home from './pages/home/Home';
 import Book from './pages/books/Book';
 import Addbooks from './pages/AddBook/Addbooks'
 import Signup from "./pages/loginPage/Signup";
-import Footer from "./Components/footer/Footer";
+import Footer from "./Components/LayoutComponents/footer/Footer";
 import Loginpage from "./pages/loginPage/Loginpage";
 import UserProfile from "./pages/UserProfile/UserProfile";
 
