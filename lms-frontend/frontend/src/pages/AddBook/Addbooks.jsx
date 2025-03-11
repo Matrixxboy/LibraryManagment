@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import './addbooks.css';
-    import axios from "axios"; // Import your CSS file
+import React, { useState } from "react";
+import axios from "axios";
 
 const AddBook = () => {
     const [bookData, setBookData] = useState({
@@ -11,13 +10,15 @@ const AddBook = () => {
         file: null,
         price: "",
     });
+
     const change = (e) => {
-        const {name, type, value, files} = e.target;
-        setBookData(prevData => ({
+        const { name, type, value, files } = e.target;
+        setBookData((prevData) => ({
             ...prevData,
-            [name]: type === 'file' ? files[0] : value,
+            [name]: type === "file" ? files[0] : value,
         }));
-    }
+    };
+
     const saveNewBook = async (e) => {
         e.preventDefault();
         try {
@@ -25,72 +26,120 @@ const AddBook = () => {
             for (const key in bookData) {
                 formData.append(key, bookData[key]);
             }
-            const response = await axios.post("http://localhost:5000/api/v1/add", bookData, {
+            const response = await axios.post("http://localhost:5000/api/v1/add", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
-                }
+                },
             });
-            console.log("Book data successfully : ", response.data);
+            console.log("Book data successfully submitted:", response.data);
             alert(response.data.message);
         } catch (e) {
             console.error("Error creating book", e);
-            alert('Error creating book');
+            alert("Error creating book");
         }
-    }
+    };
+
     return (
-        <div className="book-form-container">
-            <form className="bookform container" onSubmit={saveNewBook}>
-                <h2 className="form-title text-center mb-4">Add New Book</h2>
-                <div className="row">
-                    <div className="col-md-6">
-                        <div className="form-group">
-                            <label htmlFor="bookname">Book Name</label>
-                            <input name="bookname" value={bookData.bookname} type="text" className="form-control"
-                                   id="bookname" placeholder="Enter book title" required
-                                   onChange={change}/>
-                        </div>
+        <div className="bg-gray-900 flex justify-center items-center min-h-screen bg-gray-1000 p-6">
+            <form
+                className="bg-gray-800 drop-shadow-lg rounded-lg p-6 w-full max-w-3xl"
+                onSubmit={saveNewBook}
+            >
+                <h2 className="text-2xl font-semibold text-center text-gray-100 mb-6">Add New Book</h2>
+
+                <div className=" grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label className="block text-white">Book Name</label>
+                        <input
+                            name="bookname"
+                            value={bookData.bookname}
+                            type="text"
+                            placeholder="Enter book title"
+                            required
+                            onChange={change}
+                            className="w-full placeholder-gray-400 p-2 border border-gray-300 rounded-md focus:ring-2 text-white text-white focus:ring-blue-500 "
+                        />
                     </div>
-                    <div className="col-md-6">
-                        <div className="form-group">
-                            <label htmlFor="authorname">Author Name</label>
-                            <input name="author" value={bookData.author} type="text" className="form-control"
-                                   id="authorname" placeholder="Enter author's name" required
-                                   onChange={change}/>
-                        </div>
+                    <div>
+                        <label className="block text-white">Author Name</label>
+                        <input
+                            name="author"
+                            value={bookData.author}
+                            type="text"
+                            placeholder="Enter author's name"
+                            required
+                            onChange={change}
+                            className="w-full p-2 border placeholder-gray-400 border-gray-300 rounded-md focus:ring-2 text-white focus:ring-blue-500"
+                        />
                     </div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="bookdesc">Book Description</label>
-                    <textarea name="description" value={bookData.description} className="form-control" id="bookdesc"
-                              placeholder="Enter a brief description of the book" rows="3" required
-                              onChange={change}/> {/* Added rows for better textarea height */}
+
+                <div className="mt-4">
+                    <label className="block text-white">Book Description</label>
+                    <textarea
+                        name="description"
+                        value={bookData.description}
+                        placeholder="Enter a brief description of the book"
+                        rows="3"
+                        required
+                        onChange={change}
+                        className="w-full p-2 border placeholder-gray-400 border-gray-300 rounded-md focus:ring-2 text-white focus:ring-blue-500"
+                    />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="booktag">Book tag</label>
-                    <input name="hashtags" value={bookData.hashtags} type="text" className="form-control" id="booktag"
-                           placeholder="Enter one tag for the book" required
-                           onChange={change}/>
+
+                <div className="mt-4">
+                    <label className="block text-white">Book Tag</label>
+                    <input
+                        name="hashtags"
+                        value={bookData.hashtags}
+                        type="text"
+                        placeholder="Enter one tag for the book"
+                        required
+                        onChange={change}
+                        className="w-full p-2 border placeholder-gray-400 border-gray-300 rounded-md focus:ring-2 text-white focus:ring-blue-500"
+                    />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="authorname">Price</label>
-                    <input name="price" type="number" value={bookData.price} className="form-control" id="price"
-                           placeholder="Enter book Const." required
-                           onChange={change}/>
+
+                <div className="mt-4">
+                    <label className="block text-white">Price</label>
+                    <input
+                        name="price"
+                        type="number"
+                        value={bookData.price}
+                        placeholder="Enter book cost"
+                        required
+                        onChange={change}
+                        className="w-full p-2 border  placeholder-gray-400 border-gray-300 rounded-md focus:ring-2 text-white focus:ring-blue-500"
+                    />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="bookimage" style={{margin: "2px 1px 2px 1px"}}>Upload Book Cover</label>
-                    <br/>
-                    <input name="file" type="file" className="form-control-file" id="bookimage"
-                           onChange={change}/>
+
+                <div className="mt-4">
+                    <label className="block text-white">Upload Book Cover</label>
+                    <input
+                        name="file"
+                        type="file"
+                        className="w-full p-2 border placeholder-gray-400 border-gray-300 rounded-md focus:ring-2 text-white focus:ring-blue-500"
+                        onChange={change}
+                    />
                 </div>
-                <div className="form-group form-check">
-                    <input className="form-check-input" type="checkbox" id="gridCheck" required/>
-                    <label className="form-check-label" htmlFor="gridCheck">
+
+                <div className="mt-4 flex items-center">
+                    <input
+                        type="checkbox"
+                        id="gridCheck"
+                        required
+                        className="mr-2"
+                    />
+                    <label htmlFor="gridCheck" className="text-white">
                         I confirm that this book information is accurate.
                     </label>
                 </div>
-                <button type="submit" id="addBookButton" className="btn btn-primary btn-lg btn-block submit-button">Add
-                    Book
+
+                <button
+                    type="submit"
+                    className="w-full mt-6 bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300"
+                >
+                    Add Book
                 </button>
             </form>
         </div>

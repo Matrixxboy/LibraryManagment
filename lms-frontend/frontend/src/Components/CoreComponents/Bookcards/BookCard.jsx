@@ -1,46 +1,50 @@
-import React, { useState } from 'react';
-import './bookcard.css';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const BookCard = ({ book }) => {
-    const [isExpanded, setIsExpanded] = useState(false); // State for expansion
-
-    const toggleExpand = () => {
-        setIsExpanded(!isExpanded);
-    };
+    const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="bookcardcomp">
+        <div className="relative group transition-all">
             <div
-                className={`card glass-effect ${isExpanded ? 'expanded' : ''}`} // Conditional class
-                style={{ width: "20rem" }}
-                onMouseEnter={toggleExpand} // Expand on hover
-                onMouseLeave={toggleExpand}  // Contract on mouse out
+                className={`relative bg-white/10 backdrop-blur-md shadow-lg rounded-xl overflow-hidden transform transition-all duration-300 ${
+                    isExpanded ? "scale-105" : "scale-100"
+                }`}
+                onMouseEnter={() => setIsExpanded(true)}
+                onMouseLeave={() => setIsExpanded(false)}
             >
-                <img src={book.image} rel='preload' className="card-img-top" alt={book.bookname} />
-                <div className="card-body">
-                    <h5 className="card-title bookcard">{book.bookname}</h5>
-                    <p className="card-text bookcard">{book.description}</p>
+                <img
+                    src={book.image}
+                    alt={book.bookname}
+                    className="w-full h-56 object-cover rounded-t-xl"
+                />
+                <div className="p-4">
+                    <h5 className="text-lg font-semibold text-white">{book.bookname}</h5>
+                    <p className="text-sm text-gray-300">{book.description}</p>
                 </div>
-                <ul className="list-group ">
-                    <li className="bookdetails list-group-item">Author : {book.author}</li>
-                    <li className="bookdetails list-group-item">Book Price : {book.price}/-</li>
-                    <li className="bookdetails list-group-item">Tags : {book.hashtags}</li>
-                    {/* <li className="list-group-item">{book.hashtags}</li> */}
+                <ul className="p-4 text-gray-400 text-sm">
+                    <li><strong>Author:</strong> {book.author}</li>
+                    <li><strong>Price:</strong> {book.price}/-</li>
+                    <li><strong>Tags:</strong> {book.hashtags}</li>
                 </ul>
-                <div className="card-body">
-                    <Link to="#" className="glass-button card-link">Add to Cart</Link>
+                <div className="p-4">
+                    <Link
+                        to="#"
+                        className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all"
+                    >
+                        Add to Cart
+                    </Link>
                 </div>
-                 {/* Conditionally render the full description */}
+
+                {/* Expanded Content */}
                 {isExpanded && (
-                    <div className="expanded-content">
-                        <p>{book.fullDescription || book.description} </p> {/* Use fullDescription if available */}
-                        {/* Add other expanded content here */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4 text-gray-200 text-sm transition-opacity duration-300">
+                        <p>{book.fullDescription || book.description}</p>
                     </div>
                 )}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default BookCard;
